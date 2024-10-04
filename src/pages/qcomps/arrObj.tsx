@@ -15,21 +15,37 @@ export default function BucketList() {
   );
 
   function handleToggleMyList(artworkId: number, nextSeen: boolean) {
+    // makes a shallow copy of myList, so ay changes change initialList, which changes yourList
+    // const tmpList = myList.map(e => {
+        // if (e.id === artworkId) {
+        //     e.seen = nextSeen
+        // }
+        // return e
+    //}
     const tmpList = myList.map(e => {
         if (e.id === artworkId) {
-            e.seen = nextSeen
+          return {...e, seen: nextSeen}
+        } else {
+          return e
         }
-        return e
     });
     setMyList(tmpList);
   }
 
   function handleToggleYourList(artworkId: number, nextSeen: boolean) {
+    // const tmpList = yourList.map(e => {
+    //     if (e.id === artworkId) {
+    //         e.seen = nextSeen
+    //     }
+    //     return e
+    // });
+
     const tmpList = yourList.map(e => {
         if (e.id === artworkId) {
-            e.seen = nextSeen
+          return {...e, seen: nextSeen}
+        } else {
+          return e
         }
-        return e
     });
     setYourList(tmpList);
   }

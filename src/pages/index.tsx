@@ -3,13 +3,13 @@
 // import { Inter } from 'next/font/google'
 // import styles from '@/styles/Home.module.css'
 
-import FeedbackForm from "./qcomps/thankYouCrash"
+import Art from "./qcomps/arrObj"
 
 export default function Home() {
   return (
     
     <div>
-      <FeedbackForm />
+      <Art />
     </div>
   )
 }
